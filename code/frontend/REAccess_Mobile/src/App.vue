@@ -27,6 +27,7 @@
       </div>
     </div>
     <div class="bg-box" v-if="isShowHome">
+      <img src="@/assets/banner改字.jpg" class="header-img"/>
        <!-- <div class="bg-title">产城智链</div>
        <div class="bg-tag">发现你的城市</div>
        <div class="bg-detail">解锁100+维度，洞察240+城市，追踪90+产业</div> -->
@@ -45,28 +46,28 @@
           <router-link to="/SingleIndex">
             <img src="@/assets/单项指标-选中.svg" v-if="routerName=='SingleIndex' || routerName=='Home'" class="img-size"/>
             <img src="@/assets/单项指标-未选中.svg" v-else class="img-size"/>
-            <div :class="routerName=='SingleIndex'?'menu-title active-menu':'menu-title'">单项指标</div>
+            <div :class="(routerName=='SingleIndex'||routerName=='Home')?'menu-title active-menu':'menu-title'">单项指标</div>
           </router-link> 
         </el-col>
         <el-col :span="6">
            <router-link to="/CityRanking">
               <img src="@/assets/城市排名-选中.svg" v-if="routerName=='CityRanking' || routerName=='Home'" class="img-size"/>
               <img src="@/assets/城市排名-未选中.svg" v-else class="img-size"/>
-              <div :class="routerName=='CityRanking'?'menu-title active-menu':'menu-title'">城市排名</div>
+              <div :class="(routerName=='CityRanking'||routerName=='Home')?'menu-title active-menu':'menu-title'">城市排名</div>
            </router-link> 
         </el-col>
         <el-col :span="6">
            <router-link to="/IndustrialInvest">
               <img src="@/assets/产业投资-选中.svg" v-if="routerName=='IndustrialInvest' || routerName=='Home'" class="img-size"/>
               <img src="@/assets/产业投资-未选中.svg" v-else class="img-size"/>
-              <div :class="routerName=='IndustrialInvest'?'menu-title active-menu':'menu-title'">产业投资</div>
+              <div :class="(routerName=='IndustrialInvest'||routerName=='Home')?'menu-title active-menu':'menu-title'">产业投资</div>
           </router-link> 
         </el-col>
         <el-col :span="6">
             <router-link to="/SpecialPolicies">
                 <img src="@/assets/政策 选中.svg" v-if="routerName=='SpecialPolicies' || routerName=='Home'" class="img-size" @click="goToPolice()"/>
                 <img src="@/assets/专项政策未选中.svg" v-else class="img-size" @click="goToPolice()"/>
-                <div :class="routerName=='SpecialPolicies'?'menu-title active-menu':'menu-title'" @click="goToPolice()">专项政策</div>
+                <div :class="(routerName=='SpecialPolicies'||routerName=='Home')?'menu-title active-menu':'menu-title'" @click="goToPolice()">专项政策</div>
             </router-link> 
         </el-col>
       </el-row>
@@ -311,12 +312,23 @@ body {
   color: #fff !important;
 }
 .bg-box{
-  width: 100%;
+  /* width: 100%;
   height: 11.5rem;
   background: url("./assets/banner.jpg") no-repeat;
-  /* background-size:100.5% 104%;  */
   background-size:100%;
-  text-align: center;
+  text-align: center; */
+    width: 100%;
+    height: 10.8rem;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    text-align: center;
+}
+.header-img{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    margin-top: -0.7rem;
 }
 a {
    text-decoration: none;

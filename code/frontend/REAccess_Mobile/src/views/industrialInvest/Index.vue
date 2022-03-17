@@ -60,6 +60,9 @@ export default {
     if(routerName === 'LandDetail'){
         this.chooseItem = 'land'
     }
+    if(searchName === '所属产业'){
+        this.chooseOption = '所属产业'
+    }
     this.getInvestList()
     this.$store.commit('common/common/setSearchName', '')
     this.$store.commit('common/common/setRouterName', '')
