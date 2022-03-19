@@ -77,7 +77,7 @@ namespace REAccess.Mobile.Common.Utils
         public static string BillionConversionFunc(string matterValue)
         {
             string result = string.Empty;
-            if(float.Parse(matterValue) > 10000)
+            if(float.Parse(matterValue) > 1000)
             {
                 result = ThousandFormatter((float.Parse(matterValue) / 10000).ToString(),1) + IndustryRankUnit.ByAmount;
             }
