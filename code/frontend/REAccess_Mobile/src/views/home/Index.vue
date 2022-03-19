@@ -201,7 +201,7 @@ export default {
 .news-buttom-box{
   padding-left: 0.5rem;
   position: absolute;
-  margin-top: 0.1rem;
+  /* margin-top: 0.1rem; */
   bottom: 0;
   /* margin-top: 0.4rem; */
   /* position: absolute; */
@@ -234,7 +234,7 @@ export default {
   float: left;
   padding: 0 .25rem 0 .25rem;
   margin-right: .25rem;
-  margin-bottom: 0.1rem;
+  /* margin-bottom: 0.1rem; */
   /* overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; */
