@@ -436,9 +436,9 @@ namespace REAccess.Mobile.Common.Services
                             ProjectIndustry = dataTable.Rows[i][3].ToString(),
                             ProjectCapacity = dataTable.Rows[i][4].ToString(),
                             AreaCovered = dataTable.Rows[i][5].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][5].ToString()) + IndustryRankUnit.ByLandSize,
-                            TransactionAmount = dataTable.Rows[i][6].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][6].ToString()) + IndustryRankUnit.AmountUnit,
-                            AnnualOutput = dataTable.Rows[i][7].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][7].ToString()) + IndustryRankUnit.AmountUnit,
-                            AnnualTax = dataTable.Rows[i][8].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][8].ToString()) + IndustryRankUnit.AmountUnit
+                            TransactionAmount = dataTable.Rows[i][6].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.BillionConversionFunc(dataTable.Rows[i][6].ToString()),
+                            AnnualOutput = dataTable.Rows[i][7].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.BillionConversionFunc(dataTable.Rows[i][7].ToString()),
+                            AnnualTax = dataTable.Rows[i][8].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.BillionConversionFunc(dataTable.Rows[i][8].ToString())
                         };
                         model.Add(project);
                     }
@@ -470,9 +470,9 @@ namespace REAccess.Mobile.Common.Services
                             ProjectIndustry = industryName,
                             ProjectCapacity = dataTable.Rows[i][4].ToString(),
                             AreaCovered = dataTable.Rows[i][5].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][5].ToString()) + IndustryRankUnit.ByLandSize,
-                            TransactionAmount = dataTable.Rows[i][6].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][6].ToString()) + IndustryRankUnit.AmountUnit,
-                            AnnualOutput = dataTable.Rows[i][7].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][7].ToString()) + IndustryRankUnit.AmountUnit,
-                            AnnualTax = dataTable.Rows[i][8].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.ThousandFormatter(dataTable.Rows[i][8].ToString()) + IndustryRankUnit.AmountUnit
+                            TransactionAmount = dataTable.Rows[i][6].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.BillionConversionFunc(dataTable.Rows[i][6].ToString()),
+                            AnnualOutput = dataTable.Rows[i][7].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.BillionConversionFunc(dataTable.Rows[i][7].ToString()),
+                            AnnualTax = dataTable.Rows[i][8].ToString() == IndustryRankUnit.NullVaule ? IndustryRankUnit.NullVaule : ToolFunc.BillionConversionFunc(dataTable.Rows[i][8].ToString())
                         };
                         model.Add(project);
                     }
