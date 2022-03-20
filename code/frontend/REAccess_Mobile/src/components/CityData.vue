@@ -5,7 +5,7 @@
         <!-- <div class="unit-box">{{rankingData0.year}}年 排名</div> -->
       </div>
       <div v-for="(item,index) in rankingData.cityRankList" :key="String(index)" class="line-box">
-        <div :class="index>2?'item-box uni-font':'item-box'">
+        <div :class="index>2?'item-box uni-font':'item-box'" style="color:#333333">
           <img :src='imgList[index].url' class="img-item"/>
           <!-- <div v-for="(imgObj,i) in imgList" :key="String(i)"/><img :src="imgObj.url"/></div> -->
           {{item.indexName}}

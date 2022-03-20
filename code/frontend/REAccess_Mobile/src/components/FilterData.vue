@@ -16,7 +16,7 @@
             <img src="@/assets/3.svg" class="order-img"/>
         </div>
         <div class="line-item num-order" v-if="index>2">#{{index+1}}</div>
-        <div :class="index>2?'line-item uni-font':'line-item'" style="line-height: 1rem;margin-top: 1.5rem;padding-right:4%;width:26%">{{item.cityName}}</div>
+        <div :class="index>2?'line-item uni-font':'line-item'" style="line-height: 1rem;margin-top: 1.5rem;padding-right:4%;width:26%;color:#333333">{{item.cityName}}</div>
         <div class="line-item uni-font" style="line-height: 1rem;margin-top: 1.5rem;padding-right:3%;width:28%">{{item.provinceName}}</div>
         <div class="line-item uni-font amount-box">{{item.rankValue}} {{item.unit}}</div>
       </div>

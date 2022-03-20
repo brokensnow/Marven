@@ -7,6 +7,7 @@
       </div>
       <div class="header-content" @click="returnHome()" 
         v-if="routerName !== 'PolicyDetail' && routerName !== 'ListDetail' && routerName !== 'LandDetail'">
+        <!-- <img src="@/assets/favicon.png" alt="logo"> -->
         <img src="@/assets/logo.svg" class="logo-img">
         <span class="title"> 丨 产城智链</span>
       </div>
