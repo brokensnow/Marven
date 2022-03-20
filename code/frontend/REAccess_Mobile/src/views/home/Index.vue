@@ -12,7 +12,7 @@
             <!-- <div class="news-date" >{{item.newsReleaseDate}}</div> -->
             <!-- <div class="news-content">{{item.newsContent}}</div> -->
             <div class="news-buttom-box">
-              <span class="news-tag-title">产城智链：</span>
+              <div class="news-tag-title">产城智链：</div>
               <!-- <div class="new-tag-box"> -->
                 <div class="news-tag-box" v-for="(itag,itagNum) in filterArray(item.newTags)" :key="itagNum">
                     <div class="new-tag">{{itag}}</div>
@@ -244,9 +244,10 @@ export default {
   color: #333333;
   float: left;
   font-weight: bold;
+  height: 1.18rem;
 }
 .new-tag{
-  font-size: .7rem;
+  font-size: .65rem;
   color: #999999;
 }
 .news-date{

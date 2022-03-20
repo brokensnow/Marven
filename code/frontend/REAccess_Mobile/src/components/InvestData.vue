@@ -12,7 +12,7 @@
         </div>
         <div class="line-item num-order" v-else-if="item.rankPlace>3">#{{item.rankPlace}}</div>
         <template v-if="searchName==='所在区域'">
-          <div :class="index>2?'line-item uni-font':'line-item'">{{item.cityName}}</div>
+          <div :class="index>2?'line-item uni-font':'line-item'" style="color:#333333">{{item.cityName}}</div>
           <div class="line-item uni-font">{{item.provinceName}}</div>
           <div class="line-item uni-font amount-box">{{item.rankValue}}{{item.unit}}</div>
         </template>

@@ -3,7 +3,7 @@
     <div class="detail" style="height:100%;overflow:auto;margin-bottom:110px">
       <div class="detailTitle">
         <img class="titleIcon" src="@/assets/书签.svg"/>
-        <div class="fileName">{{filePageName}}</div>
+        <div class="fileName">{{detailData.fileName}}</div>
       </div>
       <!-- <div class="hrStyle"></div> -->
       <div class="line-box">
