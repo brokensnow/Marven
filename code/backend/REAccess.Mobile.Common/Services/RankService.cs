@@ -183,7 +183,7 @@ namespace REAccess.Mobile.Common.Services
             //}).ToList();
             List<NewsModel> model = _utilService.GetNewsData();
             currentPage = currentPage == 0 ? 1 : currentPage;
-            pageSize = pageSize == 0 ? 10 : pageSize;
+            pageSize = pageSize == 0 ? 5 : pageSize;
 
             model = PageHelper.PageUtil<NewsModel>(currentPage, pageSize, model);
 
@@ -195,19 +195,12 @@ namespace REAccess.Mobile.Common.Services
         public NewsModel GetNewsById(int newsId)
         {
             NewsModel model = new NewsModel();
-            var dbNews = StaticCache.DdsNews.FirstOrDefault(x => x.Id == newsId);
-            if(dbNews != null)
+
+            List<NewsModel> newsData = _utilService.GetNewsData();
+            model = newsData.FirstOrDefault(x => x.Id == newsId);
+            if(model != null)
             {
-                List<NewsModel> newsData = _utilService.GetNewsData();
-                model = newsData.FirstOrDefault(x => x.Id == dbNews.Id);
-                model.NewsTitle = WebUtility.HtmlDecode(dbNews.Title).Replace("<div>","").Replace("</div>","");
-                //model.Id = dbNews.Id;
-                //model.NewsTitle = dbNews.Title;
-                //model.NewsContent = dbNews.Content;
-                //model.NewsImage = Path.Combine("RealTimeInfoImgs", dbNews.Img).Replace(".png",".jpg");
-                ////model.NewsReleaseDate = ToolFunc.DatetimeFormatter(dbNews.ReleaseTime);
-                //model.NewsReleaseDate = "2022-03-21";
-                //model.NewTags = dbNews.Tags.Split(';').ToList();
+                model.NewsTitle = WebUtility.HtmlDecode(model.NewsTitle).Replace("<span>", "").Replace("</span>", "");
             }
 
             return model;
