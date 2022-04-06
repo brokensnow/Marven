@@ -380,6 +380,7 @@ namespace REAccess.Mobile.Common.Services
                     news.NewTags = tagList;
                     model.Add(news);
                 }
+                model = model.OrderByDescending(x => Convert.ToDateTime(x.NewsReleaseDate)).ToList();
             }
 
             return model;

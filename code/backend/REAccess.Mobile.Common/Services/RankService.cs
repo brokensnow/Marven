@@ -182,6 +182,11 @@ namespace REAccess.Mobile.Common.Services
             //    NewTags = x.Tags.Split(';').Where(x => x != "").ToList()
             //}).ToList();
             List<NewsModel> model = _utilService.GetNewsData();
+            //首页只显示两个tag
+            model.ForEach(x =>
+            {
+                x.NewTags = x.NewTags.Take(2).ToList();
+            });
             currentPage = currentPage == 0 ? 1 : currentPage;
             pageSize = pageSize == 0 ? 5 : pageSize;
 
