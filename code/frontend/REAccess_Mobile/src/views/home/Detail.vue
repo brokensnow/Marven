@@ -57,7 +57,7 @@ export default {
       .get(`/Rank/GetNewsById?newsId=${id}`)
       .then((res) => {
         this.newsDetail = res.data.returnObj
-        this.newsDetail.newsImage = 'http://47.242.106.96:8088/'+ res.data.returnObj.newsImage
+        this.newsDetail.newsImage = 'https://rea.deloitte.com.cn/api/'+ res.data.returnObj.newsImage
       });
     },
   }

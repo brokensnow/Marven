@@ -13,7 +13,7 @@ module.exports = {
     proxyTable: {
         // 配置多个跨域
         '/api': {
-            target: 'http://47.242.106.96:8088',//跨域接口的地址
+            target: 'https://rea.deloitte.com.cn',//跨域接口的地址
             changeOrigin: false,
             pathRewrite: {
                 '^/api': '/api'

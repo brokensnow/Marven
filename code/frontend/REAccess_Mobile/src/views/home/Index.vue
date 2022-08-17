@@ -14,8 +14,10 @@
             <div class="news-buttom-box">
               <div class="news-tag-title">产城智链：</div>
               <!-- <div class="new-tag-box"> -->
-                <div class="news-tag-box" v-for="(itag,itagNum) in filterArray(item.newTags)" :key="itagNum">
-                    <div class="new-tag">{{itag}}</div>
+                <div class="news-tag-card">
+                  <div class="news-tag-box" v-for="(itag,itagNum) in filterArray(item.newTags)" :key="itagNum"  :style="itagNum===0?'margin-left:3.5rem':''">
+                      <div class="new-tag">{{itag}}</div>
+                  </div>
                 </div>
               <!-- </div> -->
             </div>
@@ -94,8 +96,8 @@ export default {
               this.newsList.push(item)
           })
           this.newsList.map((item)=>{
-            if(item.newsImage.indexOf("http://reaapi.ftechsoftware.com/") === -1){
-                item.newsImage = 'http://reaapi.ftechsoftware.com/'+item.newsImage
+            if(item.newsImage.indexOf("https://rea.deloitte.com.cn/api/") === -1){
+                item.newsImage = 'https://rea.deloitte.com.cn/api/'+item.newsImage
             }
           })
         }else{
@@ -114,7 +116,7 @@ export default {
       })
     },
     htmlDecode(str){
-      str = str.replaceAll("div","span")
+      //str = str.replaceAll("div","span")
       const div = document.createElement('div');
       div.innerHTML = str;
       return div.innerText || div.innerHTML;
@@ -151,6 +153,10 @@ export default {
   vertical-align: middle;
   height: 100%;
   float: left;
+}
+.news-tag-card{
+  float: left;
+  width: 100%;
 }
 .news-img{
   width: 7.5rem;
@@ -234,7 +240,7 @@ export default {
   float: left;
   padding: 0 .25rem 0 .25rem;
   margin-right: .25rem;
-  /* margin-bottom: 0.1rem; */
+  margin-bottom: 0.2rem;
   /* overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis; */
@@ -242,7 +248,8 @@ export default {
 .news-tag-title{
   font-size: .7rem;
   color: #333333;
-  float: left;
+  /* float: left; */
+  position: absolute;
   font-weight: bold;
   height: 1.18rem;
 }
